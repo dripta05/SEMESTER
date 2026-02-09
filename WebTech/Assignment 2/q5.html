@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q5</title>
+</head>
+<body>
+    <button onclick=displayDate() style="padding:5px 15px 5px 15px;"> Display </button>
+    <h3 id="result"></h3>
+
+    <script>      
+        
+        function displayDate() {
+            var date = new Date();
+            var days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+
+            var dayName = days[(date.getDay() + 6) % 7];
+
+            var currentDate = date.getDate() + "/" + 
+                              (date.getMonth() + 1) + "/" + 
+                              date.getFullYear();
+
+            var currentTime = date.toLocaleTimeString()
+
+            document.getElementById("result").innerHTML =
+                "Day: " + dayName + "<br>" +
+                "Date: " + currentDate + "<br>" +
+                "Time: " + currentTime;
+        
+        }
+
+    </script>
+</body>
+</html>
