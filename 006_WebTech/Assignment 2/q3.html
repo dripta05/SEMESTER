@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q3</title>
+</head>
+<body>
+    <button onclick=countClick() style="padding:5px 15px 5px 15px;"> Click </button>
+    <h3 id="countDisplay"> Count : 0</h3>
+
+    <script>
+        var cnt = 0;
+        var count = document.getElementById("countDisplay");
+        function countClick(){
+            cnt++;
+            count.innerHTML = `Count : ${cnt}`;
+        }
+    </script>
+</body>
+</html>
