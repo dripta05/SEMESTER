@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS Design Example</title>
+
+    <style>
+        body {
+            background-image: url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
+            background-repeat: repeat;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Different font styles */
+        h1 {
+            font-family: "Georgia", serif;
+            color: darkblue;
+        }
+
+        h2 {
+            font-family: "Courier New", monospace;
+            color: darkgreen;
+        }
+
+        p {
+            font-family: "Verdana", sans-serif;
+            font-style: italic;
+            font-size: 18px;
+        }
+
+        /* Background with no-repeat */
+        .banner {
+            background-image: url("https://via.placeholder.com/600x150");
+            background-repeat: no-repeat;   /* No repeat */
+            background-size: cover;
+            height: 150px;
+            margin-bottom: 20px;
+        }
+
+        /* Link styles */
+        a:link {
+            color: blue;
+            text-decoration: none;
+        }
+
+        a:visited {
+            color: purple;
+        }
+
+        a:hover {
+            color: red;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
+        a:active {
+            color: orange;
+        }
+
+        a {
+            cursor: crosshair;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="banner"></div>
+
+    <h1>Welcome to My CSS Web Page</h1>
+    <h2>Different Font Styles Demonstration</h2>
+
+    <p>
+        This paragraph uses a different font style and italic formatting.
+        CSS allows us to control fonts, backgrounds, links, and cursors easily.
+    </p>
+
+    <h3>Link Examples:</h3>
+    <a href="https://www.google.com" target="_blank">Visit Google</a><br><br>
+    <a href="https://www.wikipedia.org" target="_blank">Visit Wikipedia</a>
+
+</body>
+</html>

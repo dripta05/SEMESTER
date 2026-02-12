@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>SmartWatch X</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <style>
+            html {
+                scroll-behavior: smooth;
+            }
+
+            body {
+                margin: 0;
+                font-family: 'Segoe UI', sans-serif;
+                background: linear-gradient(to right, #141e30, #243b55);
+                color: white;
+            }
+
+            /* Header */
+            header {
+                text-align: center;
+                padding: 60px 20px;
+                background: url("https://static.vecteezy.com/system/resources/thumbnails/043/230/115/small_2x/conceptual-technology-illustration-of-artificial-intelligence-abstract-futuristic-background-vector.jpg") no-repeat center/cover;
+                box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+            }
+
+            header h1 {
+                font-size: 40px;
+                margin: 0;
+            }
+
+            /* Navigation */
+            nav {
+                background: rgba(0,0,0,0.8);
+                display: flex;
+                justify-content: center;
+                position: sticky;
+                top: 0;
+            }
+
+            nav a {
+                color: white;
+                padding: 15px 20px;
+                text-decoration: none;
+                transition: 0.3s;
+            }
+
+            nav a:hover {
+                background: #00c6ff;
+                border-radius: 8px;
+                transform: scale(1.1);
+            }
+
+            /* Sections */
+            section {
+                padding: 60px 20px;
+                text-align: center;
+                justify-content: center;
+            }
+
+            h2 {
+                margin-bottom: 30px;
+            }
+
+            /* Feature Cards */
+            .features {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 20px;
+            }
+
+            .card {
+                background: white;
+                color: black;
+                width: 280px;
+                padding: 20px;
+                border-radius: 15px;
+                box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+                transition: transform 0.4s;
+            }
+
+            .card img {
+                width: 100%;
+                border-radius: 10px;
+            }
+
+            .card:hover {
+                transform: translateY(-10px);
+            }
+
+            /* Pricing */
+            .pricing-container {
+                display: flex;
+                justify-content: center; 
+                align-items: center;
+            }
+
+            .price-card{
+                justify-content: center;
+                display:flex;
+                padding:10px;
+                border-radius: 10px;
+                box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+                transition: 0.3s;
+                width:70%;
+
+            }
+
+            .price-card img{
+                margin-right:20px;
+                border-radius: 20px;
+                width:70%;
+                max-width: 800px;
+            }
+            .price-box {
+                background: white;
+                color: black;
+                display: inline-block;
+                padding: 30px;
+                border-radius: 20px;
+                box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+                transition: 0.3s;
+            }
+            .tagline {
+                font-size: 14px;
+                color: gray;
+                margin-bottom: 20px;
+            }
+
+            .price {
+                font-size: 42px;
+                font-weight: bold;
+                color: #0072ff;
+                margin-bottom: 20px;
+            }
+
+            .features-list {
+                list-style: none;
+                padding: 0;
+                margin: 20px 0;
+                text-align: left;
+            }
+
+            .features-list li {
+                margin-bottom: 8px;
+                font-size: 14px;
+            }  
+
+            .price-card:hover {
+                transform: scale(1.02);
+            }
+
+            
+
+            button {
+                padding: 10px 20px;
+                background: linear-gradient(to right, #00c6ff, #0072ff);
+                border: none;
+                color: white;
+                border-radius: 25px;
+                cursor: pointer;
+                transition: 0.3s;
+            }
+
+            button:hover {
+                background: linear-gradient(to right, #ff512f, #dd2476);
+                transform: scale(1.1);
+            }
+
+            /* Contact */
+            input, textarea {
+                width: 80%;
+                padding: 10px;
+                margin: 10px;
+                border-radius: 10px;
+                border: none;
+            }
+
+            /* Footer */
+            footer {
+                background: black;
+                padding: 20px;
+                text-align: center;
+                margin-top: 40px;
+            }
+
+            /* Responsive */
+            @media (max-width: 768px) {
+                .features {
+                    flex-direction: column;
+                    align-items: center;
+                }
+            }
+        </style>
+    </head>
+    <body>
+
+        <!-- Header -->
+        <header id="home">
+            <h1>SmartWatch X</h1>
+            <p>The Future of Fitness & Connectivity</p>
+        </header>
+
+        <!-- Navigation -->
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#features">Features</a>
+            <a href="#pricing">Pricing</a>
+            <a href="#contact">Contact</a>
+        </nav>
+
+        <!-- Features Section -->
+        <section id="features">
+            <h2>Features</h2>
+            <div class="features">
+                <div class="card">
+                    <img src="https://imgs.search.brave.com/AwmnjhidjqiTeSgDkI7qIEZnT2tzQTnVwHvejLgVJDM/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/d2FyZWFibGUuY29t/L3dwLWNvbnRlbnQv/dXBsb2Fkcy9zaXRl/cy82LzIwMjQvMTAv/Z29vZ2xlLXBpeGVs/LXdhdGNoLTMtcmV2/aWV3LWhlYXJ0LXJh/dGUtMTAyNHg1NzYu/anBn" alt="Heart Rate Monitor">
+                    <h3>Heart Rate Monitor</h3>
+                    <p>Track your heart rate in real-time with high precision sensors.</p>
+                </div>
+
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e" alt="Music Control">
+                    <h3>Music Control</h3>
+                    <p>Control your music directly from your wrist anytime.</p>
+                </div>
+
+                <div class="card">
+                    <img src="https://imgs.search.brave.com/_j8lAbRaVOHtTgFHj34BqxAOw1gZ-7WopjJM_IRtk1U/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9wYy10/YWJsZXQuY29tL3dw/LWNvbnRlbnQvdXBs/b2Fkcy8yMDI0LzAy/L1VuZGVyc3RhbmRp/bmctU21hcnR3YXRj/aC1XYXRlci1SZXNp/c3RhbmNlLVJhdGlu/Z3MuanBn" alt="Water Resistant">
+                    <h3>Water Resistant</h3>
+                    <p>Designed to withstand sweat and rain with IP68 protection.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing Section -->
+        <section id="pricing">
+            <h2>Pricing</h2>
+            <div class="pricing-container">
+                <div class="price-card">
+                    <img src="https://imgs.search.brave.com/n8pe4s8AD8Yzag1I6t9potTWIqVuGpNKrcOFBeYqT8A/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jZG4u/bW9zLmNtcy5mdXR1/cmVjZG4ubmV0L3h4/RUNUWmdnaUZuaUNN/WVloQzVQcmIuanBn" alt="watchX">
+                    <div class="price-box">
+                        <h2 class="product-name">SmartWatch X</h2>
+                        <p class="tagline">Ultimate Fitness & Smart Companion</p>
+                        <div class="price">
+                            <span class="currency">$</span>199
+                        </div>
+
+                        <ul class="features-list">
+                            <li>✔ 1 Year Warranty</li>
+                            <li>✔ Free Shipping</li>
+                            <li>✔ 24/7 Customer Support</li>
+                            <li>✔ 7-Day Easy Return</li>
+                        </ul>
+
+                        <button onclick="buyNow()">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <input type="text" placeholder="Your Name"><br>
+            <input type="email" placeholder="Your Email"><br>
+            <textarea rows="4" placeholder="Your Message"></textarea><br>
+            <button onclick="submitForm()">Send Message</button>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            © 2026 SmartWatch X | Designed with CSS3
+        </footer>
+
+        <script>
+            function buyNow() {
+                alert("Thank you for choosing SmartWatch X!");
+            }
+
+            function submitForm() {
+                alert("Your message has been submitted successfully!");
+            }
+        </script>
+
+    </body>
+</html>
