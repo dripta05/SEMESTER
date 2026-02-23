@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Calculator with History</title>
+    
+</head>
+<body>
+
+    <h2>Simple Calculator</h2>
+
+    <input type="number" id="num1" placeholder="First number">
+    
+    <select id="operator">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">÷</option>
+    </select>
+    
+    <input type="number" id="num2" placeholder="Second number">
+    
+    <button onclick="calculate()">Calculate</button>
+
+    <h3 id="result"></h3>
+
+    <h3>Last 5 Calculations</h3>
+    <ul id="historyList"></ul>
+
+    <script>
+        let historyArray = [];
+
+        function calculate() {
+            let num1 = parseFloat(document.getElementById("num1").value);
+            let num2 = parseFloat(document.getElementById("num2").value);
+            let operator = document.getElementById("operator").value;
+
+            if (isNaN(num1) || isNaN(num2)) {
+                alert("Please enter valid numbers");
+                return;
+            }
+
+            let result;
+
+            switch(operator) {
+                case "+":
+                    result = num1 + num2;
+                    break;
+                case "-":
+                    result = num1 - num2;
+                    break;
+                case "*":
+                    result = num1 * num2;
+                    break;
+                case "/":
+                    if (num2 === 0) {
+                        alert("Cannot divide by zero");
+                        return;
+                    }
+                    result = num1 / num2;
+                    break;
+            }
+
+            let calculation = num1 + " " + operator + " " + num2 + " = " + result;
+
+            document.getElementById("result").textContent = "Result: " + result;
+
+            // Store in array
+            historyArray.unshift(calculation);
+
+            // Keep only last 5 records
+            if (historyArray.length > 5) {
+                historyArray.pop();
+            }
+
+            updateHistory();
+        }
+
+        function updateHistory() {
+            let historyList = document.getElementById("historyList");
+            historyList.innerHTML = "";
+
+            historyArray.forEach(function(item) {
+                let li = document.createElement("li");
+                li.textContent = item;
+                historyList.appendChild(li);
+            });
+        }
+    </script>
+
+</body>
+</html>

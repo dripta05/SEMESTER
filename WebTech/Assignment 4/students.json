@@ -1,0 +1,7 @@
+[
+    { "id": 1, "name": "Rahul Sharma", "age": 20, "course": "BCA" },
+    { "id": 2, "name": "Anita Roy", "age": 21, "course": "BBA" },
+    { "id": 3, "name": "Suman Das", "age": 19, "course": "BSc" },
+    { "id": 4, "name": "Priya Sen", "age": 22, "course": "BA" },
+    { "id": 5, "name": "Arjun Paul", "age": 20, "course": "BCom" }
+]

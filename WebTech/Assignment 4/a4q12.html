@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Character Limit Checker</title>
+</head>
+<body>
+
+    <h2>Real-Time Character Limit Checker</h2>
+
+    <textarea id="textInput" placeholder="Type here..."></textarea>
+    <div id="charCount">200 characters remaining</div>
+
+    <script>
+        const textarea = document.getElementById("textInput");
+        const charCount = document.getElementById("charCount");
+        const maxChars = 200;
+
+        textarea.addEventListener("input", function() {
+            let textLength = textarea.value.length;
+
+            if (textLength > maxChars) {
+                textarea.value = textarea.value.substring(0, maxChars);
+                textLength = maxChars;
+            }
+
+            charCount.textContent = (maxChars - textLength) + " characters remaining";
+        });
+    </script>
+
+</body>
+</html>

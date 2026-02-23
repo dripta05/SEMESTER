@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Student List Manager</title>
+    </head>
+    <body>
+
+        <h1>Student List Manager</h1>
+
+        <input type="text" id="studentName" placeholder="Enter student name">
+        <button onclick="addStudent()">Add Student</button>
+
+        <h3>Total Students: <span id="total">0</span></h3>
+
+        <ul id="studentList"></ul>
+
+        <script>
+            function updateTotal() {
+                let list = document.getElementById("studentList");
+                document.getElementById("total").textContent = list.children.length;
+            }
+
+            function addStudent() {
+                let nameInput = document.getElementById("studentName");
+                let name = nameInput.value.trim();
+
+                if (name === "") {
+                    alert("Please enter a student name");
+                    return;
+                }
+
+                // Create list item
+                let li = document.createElement("li");
+                li.textContent = name;
+
+                // Create remove button
+                let removeBtn = document.createElement("button");
+                removeBtn.textContent = "Remove";
+
+                removeBtn.onclick = function () {
+                    li.remove();
+                    updateTotal();
+                };
+
+                // Append button to list item
+                li.appendChild(removeBtn);
+
+                // Append list item to ul
+                document.getElementById("studentList").appendChild(li);
+
+                nameInput.value = "";
+                updateTotal();
+            }
+        </script>
+
+    </body>
+</html>

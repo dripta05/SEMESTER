@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Live Search Filter</title>
+</head>
+<body>
+
+    <h2>Live Search Filter</h2>
+
+    <input type="text" id="searchBox" placeholder="Search items..." onkeyup="filterItems()">
+
+    <ul id="itemList"></ul>
+
+    <script>
+        // 10 items
+        const items = [
+            "Apple",
+            "Banana",
+            "Mango",
+            "Orange",
+            "Grapes",
+            "Pineapple",
+            "Watermelon",
+            "Strawberry",
+            "Kiwi",
+            "Papaya"
+        ];
+
+        const itemList = document.getElementById("itemList");
+
+        // Display all items initially
+        function displayItems(list) {
+            itemList.innerHTML = "";
+
+            list.forEach(function(item) {
+                let li = document.createElement("li");
+                li.textContent = item;
+                itemList.appendChild(li);
+            });
+        }
+
+        displayItems(items);
+
+        function filterItems() {
+            let searchValue = document
+                .getElementById("searchBox")
+                .value
+                .toLowerCase();
+
+            // Use filter()
+            let filteredItems = items.filter(function(item) {
+                return item.toLowerCase().includes(searchValue);
+            });
+
+            displayItems(filteredItems);
+        }
+    </script>
+
+</body>
+</html>

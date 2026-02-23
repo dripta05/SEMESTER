@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration Form Validation</title>
+</head>
+<body>
+
+    <h2>Registration Form</h2>
+
+    <form onsubmit="return validateForm()">
+        
+        <label>Name:</label>
+        <input type="text" id="name">
+        <div class="error" id="nameError"></div><br>
+
+        <label>Email:</label>
+        <input type="text" id="email">
+        <div class="error" id="emailError"></div><br>
+
+        <label>Password:</label>
+        <input type="password" id="password">
+        <div class="error" id="passwordError"></div><br>
+
+        <label>Confirm Password:</label>
+        <input type="password" id="confirmPassword">
+        <div class="error" id="confirmError"></div><br>
+
+        <button type="submit">Register</button>
+    </form>
+
+    <script>
+        function validateForm() {
+
+            let isValid = true;
+
+            let name = document.getElementById("name").value.trim();
+            let email = document.getElementById("email").value.trim();
+            let password = document.getElementById("password").value;
+            let confirmPassword = document.getElementById("confirmPassword").value;
+
+            // Clear previous errors
+            document.getElementById("nameError").textContent = "";
+            document.getElementById("emailError").textContent = "";
+            document.getElementById("passwordError").textContent = "";
+            document.getElementById("confirmError").textContent = "";
+
+            // Name validation
+            if (name === "") {
+                document.getElementById("nameError").textContent = "Name cannot be empty";
+                isValid = false;
+            }
+
+            // Email Regex
+            let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                document.getElementById("emailError").textContent = "Enter valid email address";
+                isValid = false;
+            }
+
+            // Password Regex (At least 1 uppercase + 1 number + min 6 characters)
+            let passwordRegex = /^(?=.*[A-Z])(?=.*\d).{6,}$/;
+            if (!passwordRegex.test(password)) {
+                document.getElementById("passwordError").textContent =
+                    "Password must contain uppercase letter and number (min 6 chars)";
+                isValid = false;
+            }
+
+            // Confirm password
+            if (password !== confirmPassword) {
+                document.getElementById("confirmError").textContent =
+                    "Passwords do not match";
+                isValid = false;
+            }
+
+            if(!invalid)    alert('Please try again !!!')
+
+            return alert('Successfully registered...');
+        }
+    </script>
+
+</body>
+</html>

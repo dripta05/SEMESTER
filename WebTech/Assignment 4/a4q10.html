@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fetch JSON Students</title>
+</head>
+<body>
+
+    <h2>Student List (Fetch API)</h2>
+
+    <button onclick="loadStudents()">Load Students</button>
+    <br><br>
+
+    <input type="text" id="searchBox" placeholder="Search by name..." onkeyup="searchStudents()">
+    <br><br>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Course</th>
+            </tr>
+        </thead>
+        <tbody id="studentTableBody"></tbody>
+    </table>
+
+    <script>
+        let studentsData = [];
+
+        function loadStudents() {
+            fetch("students.json")
+                .then(response => response.text())
+                .then(data => {
+                    studentsData = JSON.parse(data);   // JSON.parse()
+                    displayStudents(studentsData);
+                })
+                .catch(error => console.error("Error loading JSON:", error));
+        }
+
+        function displayStudents(data) {
+            const tableBody = document.getElementById("studentTableBody");
+            tableBody.innerHTML = "";
+
+            data.forEach(student => {
+                let row = document.createElement("tr");
+
+                row.innerHTML = `
+                    <td>${student.id}</td>
+                    <td>${student.name}</td>
+                    <td>${student.age}</td>
+                    <td>${student.course}</td>
+                `;
+
+                tableBody.appendChild(row);
+            });
+        }
+
+        function searchStudents() {
+            let searchValue = document.getElementById("searchBox").value.toLowerCase();
+
+            let filteredData = studentsData.filter(student =>
+                student.name.toLowerCase().includes(searchValue)
+            );
+
+            displayStudents(filteredData);
+        }
+    </script>
+
+</body>
+</html>
